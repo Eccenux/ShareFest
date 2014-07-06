@@ -244,6 +244,14 @@ ul {
 	.bg {
 		background: black;
 	}
+	.dragdrop {
+		padding: 1em .5em;
+		height: auto;
+	}
+	.textDrag {
+		position: static;
+		height: auto;
+	}
 }
 
 /* --------------------------------
@@ -263,7 +271,7 @@ ul {
 		margin: 0;
 		max-width: none;
 		width: 100%;
-		height: 70%;
+		height: auto;
 		position: relative;
 		float: none;
 	}
