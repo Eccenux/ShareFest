@@ -1,6 +1,10 @@
+html {
+    height: 100%;
+}
 body {
     background-color: rgba(20, 20, 20, 1);
     color: #f5f5f5;
+    height: 100%;
 }
 h3 {
     font-size: 20px;
@@ -15,16 +19,8 @@ ul {
 }
 
 .bg {
-    /*background: url('http://subtlepatterns.com/patterns/random_grey_variations.png');*/
-    /*background: url('/img/grey.png');*/
-    /*background: url('http://farm9.staticflickr.com/8514/8478065248_d23f9241ee_h.jpg');*/
-    /*background: url('http://farm3.staticflickr.com/2607/4016909843_185db132df_b.jpg');*/
-    /*background: url('http://farm9.staticflickr.com/8358/8394528614_413e2c5636_o.jpg');*/
     background: url('/img/back-dark.jpg') fixed;
     background-size: cover;
-
-    /*background: url('http://farm5.staticflickr.com/4135/4755887601_5a0b7d00b3_b.jpg');*/
-    /*background: url('http://farm5.staticflickr.com/4061/4270706290_8e2c0017bc_o.jpg');*/
 }
 
 .bgTerms {
@@ -38,12 +34,15 @@ ul {
     height: auto;
 }
 
+/* positioned below navbar with some margin */
 .container {
-    position: absolute;
+    position: relative;
     display: block;
-    margin: auto;
-    width: 800px;
-    height: 97%;
+    padding-top: calc(40px + 5%);
+    padding-left: 5em;
+	box-sizing: border-box;
+    width: 100%;
+    height: 100%;
 }
 
 .static-container {
@@ -129,8 +128,12 @@ ul {
     -o-transition: width 1s, height 1s, background-color 1s, -o-transform 1s;
     transition: width 1s, height 1s, background-color 1s, transform 1s;
 
-    width: 81%;
+	box-sizing: border-box;
+	margin: 1em 5% 1em 0;
+    width: calc(100% - 350px - 5%);
+	max-width: 750px;
     height: 70%;
+	min-height: 330px;
     border: 2px solid #DDD;
     line-height: 30px;
     text-align: center;
@@ -138,14 +141,10 @@ ul {
     /*background-color: #FFFFFF;*/
     background-color: rgba(255, 255, 255, 0.65);
     /*opacity: 0.75;*/
-    position: absolute;
     display: block;
-    top: 4%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
     cursor: cell;
+	position: relative;
+	float: left;
 }
 
 .termsHref {
@@ -184,14 +183,11 @@ ul {
 }
 
 .right_floater {
-    position: absolute;
+    float: left;
     line-height: 30px;
-    top: 20%;
-    left: 839px;
-    margin: auto;
     width: 350px;
     color: whitesmoke;
-    vertical-align: bottom;
+    margin-top: 3em;
 }
 
 .beta_floater {
@@ -212,18 +208,8 @@ ul {
 }
 
 .footer {
-    position: absolute;
-    bottom: 7%;
-    left: 10%;
     clear: both;
     color: #DDDDDD;
-    /*font-family: cursive;*/
-    /**/
-    /*position: absolute;*/
-    /*bottom: 1%;*/
-    /*right:1%;*/
-    /*clear:both;*/
-    /*color: #DDDDDD;*/
 }
 
 .textDrag {
@@ -244,3 +230,47 @@ ul {
     margin-top: 8px;
 }
 
+/* hide #files input */
+#files {
+	position: absolute;
+	top: -10em;
+}
+
+/* --------------------------------
+	narrow (probably phone)
+*/
+@media screen and (max-width: 480px)
+{
+	.bg {
+		background: black;
+	}
+}
+
+/* --------------------------------
+	half-screen or tablet
+*/
+@media screen and (max-width: 980px)
+{
+	.container {
+		position: relative;
+		display: block;
+		padding: 80px 2em 2em;
+		box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+	}
+	.dragdrop {
+		margin: 0;
+		max-width: none;
+		width: 100%;
+		height: 70%;
+		position: relative;
+		float: none;
+	}
+
+	.right_floater {
+		float: none;
+		max-width: 350px;
+		width: auto;
+	}
+}
